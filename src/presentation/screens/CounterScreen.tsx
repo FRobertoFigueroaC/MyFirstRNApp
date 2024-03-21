@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Platform } from 'react-native';
+import { PrimaryButton } from '../components';
 
 export const CounterScreen = () => {
 
@@ -19,9 +20,9 @@ export const CounterScreen = () => {
       <Text style={styles.title}>
       {counter}
       </Text>
-      <Pressable onPress={increment} onLongPress={reset}>
-        <Text>Increment</Text>
-      </Pressable>
+      <PrimaryButton label='Increment +1'
+          onLongPress={reset}
+          onPress={increment}/>
     </View>
   )
 }
@@ -37,8 +38,5 @@ const styles = StyleSheet.create({
     fontSize: 80,
     color: 'black',
     fontWeight: '300'
-  },
-  btn: {
-
   }
 })
